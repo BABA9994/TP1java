@@ -18,7 +18,7 @@ public class Aeroport {
 
 
 
-    public String GetIATA() {
+    public String getIATA() {
         return IATA;
     }
 
@@ -26,7 +26,7 @@ public class Aeroport {
         return latitude;
     }
 
-    public double GetLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
