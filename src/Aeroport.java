@@ -31,11 +31,24 @@ public class Aeroport {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "Aeroport" +
+                "IATA='" + IATA + '\'' +
+                ", Name='" + Name + '\'' +
+                ", country='" + country + '\'' +
+                ", longitude='" + longitude + '\'' +
+                ", latitude='" + latitude + '\'' +
+                '}';
+    }
 
     public static void main (String args[]){
         System.out.println("Hello world");
-        System.out.println("Hello world");
+        System.out.println("Hello world2");
+
+        Aeroport Aeroport1 = new Aeroport("CDG","Charles de Gaule","FRANCE", 5, 5);
+        System.out.println(Aeroport1);
+
         }
 
 
