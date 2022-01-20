@@ -7,7 +7,7 @@ public class Aeroport {
     private double latitude;
     private double longitude;
 
-    public Aeroport(String IATA, String Name, String country, double latitude, double longitude) {
+    public Aeroport(String IATA, String Name, String country, double longitude, double latitude) {
         this.IATA = IATA;
         this.Name = Name;
         this.country = country;
@@ -27,6 +27,7 @@ public class Aeroport {
     }
 
     public double getLongitude() {
+
         return longitude;
     }
 
