@@ -50,7 +50,7 @@ public class Earth extends Group {
         AnimationTimer animationTimer = new AnimationTimer() {
             @Override
             public void handle(long time) {
-                System.out.println("Valeur de time : " + time);
+                //System.out.println("Valeur de time : " + time);
 
                 ry.setAxis(new Point3D(0,1,0));
                 // ry.setAxis(Rotate.Y_AXIS);

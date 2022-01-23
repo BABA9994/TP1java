@@ -1,15 +1,18 @@
 package src;
 
 import javafx.application.Application;
+import javafx.geometry.Point2D;
+import javafx.geometry.Point3D;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.PickResult;
 import javafx.scene.layout.Pane;
 import javafx.scene.transform.Transform;
 import javafx.stage.Stage;
-
 
 
 public class Interface extends Application {
@@ -46,7 +49,7 @@ public class Interface extends Application {
 
         // On créer les fonctionnalités de zoom
 
-       /* ihm.addEventHandler(MouseEvent.ANY, event -> {
+        ihm.addEventHandler(MouseEvent.ANY, event -> {
             if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
                 System.out.println("Clicked on : (" + event.getSceneX()+ ", "+ event.getSceneY()+")");
                 Xclick[0] = event.getSceneX();
@@ -68,7 +71,7 @@ public class Interface extends Application {
             }
 
         });
-        */
+
 
         // On utilisera le clavier afin de zoomer, les touches fleche du haut, et flèche du bas
         primaryStage.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
@@ -82,6 +85,34 @@ public class Interface extends Application {
                     break;
             }
         });
+        ihm.addEventHandler(MouseEvent.ANY, event -> {
+            if (event.getButton()== MouseButton.SECONDARY && event.getEventType()==MouseEvent.MOUSE_CLICKED) {
+                PickResult pickResult = event.getPickResult();
+                if (pickResult.getIntersectedNode() != null) {
+// Code `a compl´eter : on r´ecup`ere le point d'intersection
+// Conversion en longitude et lattitude
+
+                    double latitude;
+                    double longitude;
+                    System.out.println("Coord");
+                    Point2D Intersection = pickResult.getIntersectedTexCoord();
+                    System.out.println(Intersection);
+
+
+                    latitude = 2*Math.toDegrees(Math.tan(Math.pow(Math.E,(0.5-Intersection.ZERO.getX())/0.2678)))-90;
+
+                    longitude = 360*Intersection.ZERO.getY()-0.5;
+
+                    System.out.println("Lat");
+                    System.out.println(latitude);
+                    System.out.println("Long");
+                    System.out.println(longitude);
+
+// Recherche dans l'objet w de la classe World de l'a´eroport le plus proche.
+// Affichage dans la console
+                }}});
+
+
     }
     public static void main(String[] args) {
         launch(args);
