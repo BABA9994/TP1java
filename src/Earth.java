@@ -11,7 +11,9 @@ import javafx.scene.shape.Box;
 import javafx.scene.shape.Sphere;
 import javafx.scene.transform.Rotate;
 
-
+import javax.swing.text.Element;
+import javax.swing.text.html.ImageView;
+import java.util.Objects;
 
 
 public class Earth extends Group {
@@ -24,6 +26,7 @@ public class Earth extends Group {
     // Box sph = new Box();
     Sphere sph = new Sphere();
     PhongMaterial mat = new PhongMaterial();
+
 
 
     public Earth () {
@@ -40,7 +43,6 @@ public class Earth extends Group {
         Image map = new Image("earth_lights_4800.png");
         mat.setDiffuseMap(map);
         sph.setMaterial(mat);
-
 
 
         this.getChildren().add(sph);

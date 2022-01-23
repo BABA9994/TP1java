@@ -6,6 +6,7 @@ import javafx.geometry.Point3D;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -14,11 +15,19 @@ import javafx.scene.layout.Pane;
 import javafx.scene.transform.Transform;
 import javafx.stage.Stage;
 
+import javax.swing.text.Element;
+import javax.swing.text.html.ImageView;
+import java.awt.*;
+import java.util.Objects;
+
 
 public class Interface extends Application {
 
     static int WIDTH = 1400;
     static int HEIGHT = 800;
+
+
+
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -30,8 +39,11 @@ public class Interface extends Application {
         Earth earth = new Earth();
         Pane pane = new Pane(earth);
         Scene ihm = new Scene(pane, WIDTH, HEIGHT,true);
+
+
         primaryStage.setScene(ihm);
         primaryStage.show();
+
 
         // On créer la caméra et faisons les réglages de la cam
         PerspectiveCamera camera = new PerspectiveCamera(true);
@@ -40,6 +52,8 @@ public class Interface extends Application {
         camera.setFarClip(5000.0);
         camera.setFieldOfView(35);
         ihm.setCamera(camera);
+
+
 
 
         final double[] Xclick = new double[1];
