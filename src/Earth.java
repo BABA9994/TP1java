@@ -1,6 +1,8 @@
 package src;
+import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.animation.RotateTransition;
+import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Material;
@@ -9,12 +11,18 @@ import javafx.scene.shape.Box;
 import javafx.scene.shape.Sphere;
 import javafx.scene.transform.Rotate;
 
+
+
+
 public class Earth extends Group {
+
+
+
+
 
     // Ici on créer un cube au lieu d'une sphere
     // Box sph = new Box();
     Sphere sph = new Sphere();
-    Rotate rotate = new Rotate();
     PhongMaterial mat = new PhongMaterial();
 
 
@@ -24,9 +32,16 @@ public class Earth extends Group {
         // sph.setHeight(300);
         // sph.setDepth(300);
 
+
+
+
+
+
         Image map = new Image("earth_lights_4800.png");
         mat.setDiffuseMap(map);
         sph.setMaterial(mat);
+
+
 
         this.getChildren().add(sph);
 
@@ -36,9 +51,14 @@ public class Earth extends Group {
             @Override
             public void handle(long time) {
                 System.out.println("Valeur de time : " + time);
-                ry.setAngle(10); // A compl´eter
-                ry.setPivotX(0);
-                ry.setPivotY(0);
+
+                ry.setAxis(new Point3D(0,1,0));
+                // ry.setAxis(Rotate.Y_AXIS);
+                //Il faut 0.384 degres de rotation toutes les 16ms afin d'avoir une rotation complete en 15 secondes
+
+                ry.setAngle(0.1); // A compl´eter
+                // sph.rotateProperty().set(sph.getRotate() + 0.01);
+
                 sph.getTransforms().add(ry);
             }
         };
