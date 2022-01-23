@@ -57,8 +57,10 @@ public class Earth extends Group {
                 ry.setAxis(new Point3D(0,1,0));
                 // ry.setAxis(Rotate.Y_AXIS);
                 //Il faut 0.384 degres de rotation toutes les 16ms afin d'avoir une rotation complete en 15 secondes
+                //POUR UN ECRAN 60HZ,
+                //Ayant un écran 165hz, il faut saisir la valeur à 0.145
 
-                ry.setAngle(0.1); // A compl´eter
+                ry.setAngle(0.145); // A compl´eter
                 // sph.rotateProperty().set(sph.getRotate() + 0.01);
 
                 sph.getTransforms().add(ry);
